@@ -26,6 +26,7 @@ public abstract class Equipamento implements Emprestavel {
         return statusEquipamento;
     }
 
+    @Override
     public void marcarComoEmprestado(){
         if(estaDisponivel()){
             this.statusEquipamento = StatusEquipamento.EMPRESTADO;
@@ -42,6 +43,7 @@ public abstract class Equipamento implements Emprestavel {
         }
     }
 
+    @Override
     public void marcarComoDisponivel(){
         if(!estaDisponivel()){
             this.statusEquipamento = StatusEquipamento.DISPONIVEL;
@@ -50,6 +52,7 @@ public abstract class Equipamento implements Emprestavel {
         }
     }
 
+    @Override
     public boolean estaDisponivel(){
         return statusEquipamento == StatusEquipamento.DISPONIVEL;
     }
