@@ -32,4 +32,11 @@ public class EmprestimoService {
         emprestimoRepository.salvar(new Emprestimo(emprestimoRepository.proximoId(), equipamento, funcionario));
         return "Emprestimo salvo com sucesso!";
     }
+
+    public String registrarDevolucao(Long idEmprestimo) {
+        Emprestimo emprestimo = emprestimoRepository.buscarPorId(idEmprestimo);
+        emprestimo.registrarDevolucao();
+        return "Devolução registrada com sucesso!";
+    }
+
 }
