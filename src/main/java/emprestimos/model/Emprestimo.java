@@ -1,4 +1,4 @@
-package emprestimos;
+package emprestimos.model;
 
 import equipamentos.model.Equipamento;
 import exceptions.DevolucaoInvalidaException;
@@ -44,6 +44,10 @@ public class Emprestimo {
 
     public LocalDate getDataDevolucao() {
         return dataDevolucao;
+    }
+
+    public boolean estaAtivo() {
+        return dataDevolucao == null;
     }
 
     public boolean estaAtrasado(){
