@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class EquipamentoRepository {
-    private Map<Long, Equipamento> equipamentos = new HashMap<Long, Equipamento>();
+    private Map<Long, Equipamento> equipamentos = new HashMap<>();
     private Long proximoId = 1L;
 
     public Long proximoId(){
@@ -32,7 +32,7 @@ public class EquipamentoRepository {
         Objects.requireNonNull(id, "Id não pode ser nulo.");
         Equipamento equipamento = equipamentos.get(id);
         if (equipamento == null) {
-            throw new EquipamentoNaoEncontradoException("Nenhum equipamento com esse id!");
+            throw new EquipamentoNaoEncontradoException("Nenhum equipamento com esse id: " + id);
         }
         return equipamento;
     }
