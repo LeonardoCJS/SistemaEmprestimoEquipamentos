@@ -2,12 +2,16 @@ package emprestimos.service;
 
 import emprestimos.model.Emprestimo;
 import emprestimos.repository.EmprestimoRepository;
+import equipamentos.enums.StatusEquipamento;
 import equipamentos.model.Equipamento;
 import equipamentos.repository.EquipamentoRepository;
 import exceptions.LimiteEmprestimoExcedidoException;
 import funcionarios.model.Funcionario;
 import funcionarios.repository.FuncionarioRepository;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmprestimoService {
     private final EmprestimoRepository emprestimoRepository;
@@ -37,6 +41,14 @@ public class EmprestimoService {
         Emprestimo emprestimo = emprestimoRepository.buscarPorId(idEmprestimo);
         emprestimo.registrarDevolucao();
         return "Devolução registrada com sucesso!";
+    }
+
+    public List<Emprestimo> listarAtrasados(){
+        return emprestimoRepository.listarAtrasados();
+    }
+
+    public Map<StatusEquipamento, List<Equipamento>> listarEquipamentosPorStatus(){
+        return Map.copyOf(equipamentoRepository.listarTodos().stream().collect(Collectors.groupingBy(Equipamento::getStatus, Collectors.toUnmodifiableList())));
     }
 
 }
