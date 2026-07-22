@@ -27,4 +27,11 @@ public class Funcionario {
         this.departamento = departamento;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Id: " + id +
+                "\nNome: " + nome +
+                "\nDepartamento: " + departamento;
+    }
 }

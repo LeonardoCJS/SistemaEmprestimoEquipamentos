@@ -58,4 +58,11 @@ public abstract class Equipamento implements Emprestavel {
     }
 
     public abstract int calcularPrazoDevolucao();
+
+    @Override
+    public String toString() {
+        return "Id: " + id +
+                "\nPatrimonio: " + patrimonio +
+                "\nStatus: " + statusEquipamento;
+    }
 }

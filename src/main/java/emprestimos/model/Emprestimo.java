@@ -62,4 +62,14 @@ public class Emprestimo {
             throw new DevolucaoInvalidaException("Esse empréstimo já foi devolvido em: " + this.dataDevolucao);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Id: " + id +
+                "\n Equipamento: " + equipamento +
+                "\n Funcionario: " + funcionario +
+                "\n Data do Emprestimo: " + dataEmprestimo +
+                "\n Data Prevista da Devolucao: " + dataPrevistaDevolucao +
+                "\n Data da Devolucao: " + dataDevolucao;
+    }
 }
