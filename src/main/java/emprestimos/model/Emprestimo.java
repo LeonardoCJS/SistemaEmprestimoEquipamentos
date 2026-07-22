@@ -66,8 +66,8 @@ public class Emprestimo {
     @Override
     public String toString() {
         return "Id: " + id +
-                "\n Equipamento: " + equipamento +
-                "\n Funcionario: " + funcionario +
+                "\n Equipamento: " + equipamento.getPatrimonio() +
+                "\n Funcionario: " + funcionario.getNome() +
                 "\n Data do Emprestimo: " + dataEmprestimo +
                 "\n Data Prevista da Devolucao: " + dataPrevistaDevolucao +
                 "\n Data da Devolucao: " + dataDevolucao;

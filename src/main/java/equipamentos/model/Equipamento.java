@@ -2,6 +2,7 @@ package equipamentos.model;
 
 import equipamentos.enums.StatusEquipamento;
 import exceptions.EquipamentoIndisponivelException;
+import exceptions.EquipamentoJaDisponivelException;
 
 public abstract class Equipamento implements Emprestavel {
     private final Long id;
@@ -48,7 +49,7 @@ public abstract class Equipamento implements Emprestavel {
         if(!estaDisponivel()){
             this.statusEquipamento = StatusEquipamento.DISPONIVEL;
         }else{
-            throw new EquipamentoIndisponivelException("O equipamento ja esta Disponivel, statusEquipamento: " + this.statusEquipamento);
+            throw new EquipamentoJaDisponivelException("O equipamento ja esta Disponivel, statusEquipamento: " + this.statusEquipamento);
         }
     }
 
