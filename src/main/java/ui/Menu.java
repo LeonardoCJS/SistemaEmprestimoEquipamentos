@@ -162,7 +162,7 @@ public class Menu {
         System.out.println("====== Lista de Emprestimos Por Status ======");
 
         for (Map.Entry<StatusEquipamento, List<Equipamento>> entry : equipamentosPorStatus.entrySet()) {
-            System.out.println("Status: " + entry.getKey() + " | Equipamento: " + entry.getValue());
+            System.out.println("Status: " + entry.getKey() + " | Equipamentos: \n" + entry.getValue());
         }
     }
 

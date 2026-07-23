@@ -62,8 +62,6 @@ public abstract class Equipamento implements Emprestavel {
 
     @Override
     public String toString() {
-        return "Id: " + id +
-                "\nPatrimonio: " + patrimonio +
-                "\nStatus: " + statusEquipamento;
+        return "Id: " + id + " | Patrimonio: " + patrimonio;
     }
 }
